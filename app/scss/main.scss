@@ -1,0 +1,288 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+
+::placeholder {
+	color: #666;
+}
+a {
+  
+  color: black;
+}
+
+
+body {
+	font-size: 14px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	overflow-x: hidden;
+	color: $text;
+
+}
+
+ul,li {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+.text-center {
+	text-align: center;
+}
+
+ // кнопки входа и регистрации  //
+header{
+	.container {
+		max-width: 1140px;
+		height: 100%;	
+		margin:auto;
+		padding-left: 15px;
+		padding-right: 15px;
+		.navigation {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+		.btn {
+			margin-left: 20px;
+			display: block;
+			width: 200px;
+			height: 50px;
+			margin-top: 20px;
+			background-color: transparent;
+			border: 3px solid black;
+			font-size: 16px;
+			&:hover {
+				background-color: #2f889a;
+				cursor: pointer;
+				border: 2px solid black;
+				transition: .2s ease-in-out;
+			}
+		}
+ 	}
+}
+%p22 {
+	padding-top: 22px;
+}
+
+.wrapper {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    align-items: center;
+    align-content: center; 
+    justify-content: center; 
+    overflow: auto;   
+    background-color: #464853;
+    display: none;
+}
+
+
+.popup {
+		min-width: 420px;
+		min-height: 280px;
+		background-color: white;
+	  	z-index: 3;
+	  	cursor: pointer;
+	  	
+	  	
+	  	
+}
+.popup__header {
+	
+	.popup__menu {
+		display: flex;
+		flex-direction: row;
+		
+		background-color: #d2d8d8;
+		.popup__menu-item {
+			width: 50%;			
+			
+			a {
+				text-decoration: none;
+				line-height: 50px;
+				display: block;
+			}
+			&:hover {
+				background-color: white;
+				cursor: pointer;
+				transition: .2s ease-in-out;
+			}
+		}
+
+	}
+}
+%flex {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+%form-input {
+	height: 37px;
+	border: 1px solid #d2d8d8;
+	border-radius: 5px;
+	padding: 0;
+}
+
+%position {
+	position: absolute;
+	top:14px;
+	font-size: 14px;
+	padding-left: 10px;
+	color: grey;
+}
+%submit {
+	background-color: #2f889a;
+	border: 1px solid #d2d8d8;
+	height: 39px;
+	cursor: pointer;
+	color: white;
+}
+.popup__container {
+	padding-left: 22px;
+	padding-right: 22px;
+	@extend %p22;
+	height: 100%;
+
+	.error-message {
+		position: absolute;
+		top:40px;
+		left:20px;
+	}
+
+	.form-login,
+	.form-registration {
+		@extend %flex;
+		
+		.e-mail,
+		.password,
+		.enter {
+			@extend %form-input;
+			
+		}
+		input {
+			margin-bottom: 22px;
+
+			&:focus {
+		    outline: none;
+		    border: 1px solid #343642;
+		}
+		
+
+		}
+		label {
+			input[type="checkbox"] {
+				margin-right: 4px;
+			}
+			position: relative;
+			.far,
+			.fas {
+				@extend %position ;
+				display: block;
+			}
+			.fa-key {
+				transform: rotate(180deg);
+				padding-right: 10px;
+			}
+		}
+		.e-mail,
+		.password {
+			padding-left: 35px;
+
+		}
+		
+		.enter {
+			@extend %submit;
+		}
+	}
+	 // Форма входа //
+
+	.popup__container-login {
+		position: relative;
+		p a {
+			color: white;
+		}
+		.hide-password {
+			display: block;
+			position: absolute;
+			top: 70px;
+    		right: 15px;
+			text-decoration: none;
+			border-left: 1px solid #d2d8d8;
+			padding-left: 10px;
+		}
+	}
+	// форма регистрации //
+
+	.popup__container-registration {
+		position: relative;
+		.error-message {
+			position: absolute;
+			top:100px;
+			left:20px;
+		}
+		.hide-password {
+			display: block;
+			position: absolute;
+			top: 130px;
+    		right: 15px;
+			text-decoration: none;
+			border-left: 1px solid #d2d8d8;
+			padding-left: 10px;
+			}
+		.login,
+		.registration {
+			@extend %form-input;
+			padding-left: 35px;
+		}
+		.registration {
+			@extend %submit;
+		}
+		label {
+			.fas {
+				@extend %position;
+			}
+		}
+	}
+}
+.popup__forgot {
+	position: absolute;
+  	width: 100%;
+  	left: 0;
+  	bottom: -30px;
+	text-align: center;
+	display: block;
+	margin: 0;
+	
+}
+
+
+// jquerry  // 
+
+
+.wrapper.is-visible {
+    display: flex;
+}
+.popup__container-login,
+.popup__container-registration {
+  display: none;
+}
+
+.popup__container-login.is-selected,
+.popup__container-registration.is-selected {
+  display: block;
+}
+
+.popup__header .popup__menu a.active {
+	background-color: white;
+}
+
+.popup input.error {
+	border: 1px solid black;
+}

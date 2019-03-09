@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>frontend test</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<!-- Custom HTML -->
+
+	<!-- Шапка -->
+
+	<header class="header" id="header">
+		
+		<div class="container">
+			<nav>
+
+				<ul class="navigation">
+						
+					<li>
+						<button class="btn nav-login">Войти</button>
+					</li>
+					<li>
+						<button class="btn nav-reg">Регистрация</button>
+					</li>
+				
+				</ul>	
+					
+				
+			</nav>	
+		
+		</div>
+
+	</header>
+
+	<main>
+		<!-- модальное окно -->
+		<div class="wrapper">
+			
+			
+			<div class="popup">
+				<!-- Шапка окна -->
+				<div class="popup__header">
+					
+					<nav>
+						
+						<ul class="popup__menu">
+							
+							<li class="popup__menu-item text-center">
+								<a href="#">Вход</a>
+							</li>
+							
+							<li class="popup__menu-item text-center">
+								<a href="#">Регистрация</a>
+							</li>
+						
+						</ul>
+					
+					</nav>
+				
+				</div>
+					
+					<!--Форма Входа  -->
+				
+				<div class="popup__container">
+					
+					<div class="popup__container-login">
+
+						<form class="form-login" id="formlogin">
+							
+							<label for="login__email"><i class="far fa-envelope"></i></label>
+							<input class="e-mail" id="login__email" type="email" placeholder="E-mail">
+							<span class="error-message"></span>
+							
+							<label for="login__password"><i class="fas fa-key"></i></label>
+							<input type="text" id="login__password" class="password" placeholder="Пароль">
+							<a href="#" class="hide-password">Скрыть</a>
+
+							<label><input type="checkbox" checked>Запомнить меня</label>
+
+							<input type="submit" class="enter" value="Войти">
+
+						</form>
+						
+						<p class="popup__forgot"><a href="#">Забыли пароль?</a></p>
+					
+					</div>	
+
+					<!-- Форма регистрации -->
+
+					<div class="popup__container-registration">
+						
+						<form class="form-registration" id="formregistation">
+							
+							<label for="username"><i class="fas fa-user"></i></label>
+							<input class="login" id="username" type="text" placeholder="Login">
+
+							<label for="registration__email"><i class="far fa-envelope"></i></label>
+							<input class="e-mail" id="registration__email" type="email" placeholder="E-mail">
+							<span class="error-message"></span>
+
+							<label for="registation__password"><i class="fas fa-key"></i></label>
+							<input type="text" id="registation__password" class="password" placeholder="Пароль">
+							<a href="#" class="hide-password">Скрыть</a>
+
+							<input type="submit" class="registration" value="Зарегистрироваться">
+						
+
+						</form>
+
+					</div>
+				
+				</div>
+			
+			</div>
+			
+		</div>
+
+	</main>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
